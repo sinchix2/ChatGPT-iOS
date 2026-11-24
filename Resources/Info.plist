@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>ChatGPT</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.openai.chatgpt</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>ChatGPT</string>
+	<key>CFBundlePackageType</key>
+	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.2026.300</string>
+	<key>CFBundleVersion</key>
+	<string>2620918</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>ChatGPT uses your camera to analyze photos, scan documents, and solve visual problems with GPT-4o Vision.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>ChatGPT uses your microphone for real-time Advanced Voice Mode conversations and voice dictation.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>ChatGPT uses your location to provide accurate local recommendations, directions, and weather information.</string>
+	<key>NSContactsUsageDescription</key>
+	<string>ChatGPT uses your contacts to allow inviting friends and nominating trusted contacts for safety alerts.</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>ChatGPT uses Face ID to securely unlock the application and protect your private conversation history.</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>audio</string>
+		<string>fetch</string>
+		<string>processing</string>
+		<string>remote-notification</string>
+	</array>
+	<key>BGTaskSchedulerPermittedIdentifiers</key>
+	<array>
+		<string>com.openai.chatgpt.refresh</string>
+		<string>com.openai.chatgpt.cleanup</string>
+	</array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.openai.chatgpt</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>chatgpt</string>
+				<string>com.openai.chatgpt</string>
+				<string>com.openai.chat</string>
+			</array>
+		</dict>
+	</array>
+	<key>UILaunchScreen</key>
+	<dict/>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,77 @@
+name: Build iOS IPA
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+  workflow_dispatch:
+    inputs:
+      create_release:
+        description: 'Publish a GitHub Release with this IPA'
+        required: false
+        type: boolean
+        default: true
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-ipa:
+    name: Build & Package .ipa
+    runs-on: macos-14
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Select Xcode Version
+        run: |
+          sudo xcode-select -s /Applications/Xcode_15.4.app || sudo xcode-select -s /Applications/Xcode.app
+          xcodebuild -version
+
+      - name: Build and Archive (Unsigned)
+        run: |
+          xcodebuild clean archive \
+            -project ChatGPT.xcodeproj \
+            -scheme ChatGPT \
+            -configuration Release \
+            -destination 'generic/platform=iOS' \
+            -archivePath build/ChatGPT.xcarchive \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY="" \
+            COMPILER_INDEX_STORE_ENABLE=NO
+
+      - name: Package Payload into IPA
+        run: |
+          mkdir -p build/Payload
+          cp -R build/ChatGPT.xcarchive/Products/Applications/ChatGPT.app build/Payload/
+          cd build
+          zip -qr -9 ../ChatGPT.ipa Payload
+          cd ..
+          ls -lh ChatGPT.ipa
+
+      - name: Upload IPA Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ChatGPT-iOS-IPA
+          path: ChatGPT.ipa
+          retention-days: 14
+
+      - name: Create GitHub Release
+        if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.create_release == 'true' }}
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v1.2026.300-build${{ github.run_number }}
+          name: ChatGPT iOS Build v1.2026.300 (${{ github.run_number }})
+          body: |
+            Automated native iOS build ported from Android APK.
+            
+            ### Artifacts
+            - **ChatGPT.ipa**: Ready for sideloading via AltStore, TrollStore, Sideloadly, or Apple Configurator.
+          files: ChatGPT.ipa
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

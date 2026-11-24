@@ -1,0 +1,83 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "ChatGPT can make mistakes. Check important details." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ChatGPT can make mistakes. Check important details."
+          }
+        }
+      }
+    },
+    "Go ad-free with ChatGPT Plus" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Go ad-free with ChatGPT Plus"
+          }
+        }
+      }
+    },
+    "Audio and video recordings are saved, and you can delete them at any time." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Audio and video recordings are saved, and you can delete them at any time."
+          }
+        }
+      }
+    },
+    "How can I help you today?" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How can I help you today?"
+          }
+        }
+      }
+    },
+    "Select Model" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select Model"
+          }
+        }
+      }
+    },
+    "Recent Chats" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recent Chats"
+          }
+        }
+      }
+    },
+    "Upgrade to Plus — $19.99/month" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upgrade to Plus — $19.99/month"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

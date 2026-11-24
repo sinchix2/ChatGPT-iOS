@@ -1,0 +1,23 @@
+# Xcode
+.DS_Store
+*/.DS_Store
+build/
+DerivedData/
+*.xcworkspace
+!ChatGPT.xcodeproj/project.pbxproj
+!ChatGPT.xcodeproj/xcshareddata/xcschemes/ChatGPT.xcscheme
+*.xcuserstate
+xcuserdata/
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Swift Package Manager
+.build/
+.swiftpm/
+
+# Fastlane / CI
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
