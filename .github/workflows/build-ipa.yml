@@ -16,7 +16,7 @@ on:
 jobs:
   build-ipa:
     name: Build & Package .ipa
-    runs-on: macos-15
+    runs-on: macos-latest
     timeout-minutes: 30
 
     steps:
